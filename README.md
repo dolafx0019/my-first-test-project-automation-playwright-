@@ -38,7 +38,7 @@ project-root/
 ├── LICENSE
 ├── README.md
 ```
-
+--------------------------------
 ## Getting Started
 1. **Clone the repository:**
    ```bash
