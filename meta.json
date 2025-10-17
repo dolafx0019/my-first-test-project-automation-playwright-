@@ -1,0 +1,13 @@
+{
+  "detected_columns": {
+    "title": "name",
+    "steps": null,
+    "expected": null,
+    "preconditions": "precondition",
+    "priority": "priority",
+    "labels": "labels",
+    "component": "component",
+    "url": null,
+    "id": "key"
+  }
+}

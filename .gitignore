@@ -1,0 +1,38 @@
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Playwright artifacts
+playwright-report/
+test-results/
+trace/
+videos/
+screenshots/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+# Node
+node_modules/
+npm-debug.log*
+yarn.lock
+package-lock.json
+
+# Playwright outputs
+playwright-report/
+test-results/
+playwright/.cache/
+blob-report/
+*.zip
+*.mp4
+*.webm
+*.png
+*.jpg
+
+# Env & local config
+.env
+.env.*
+!.env.example

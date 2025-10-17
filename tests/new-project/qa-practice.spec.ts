@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+
+test('trying all Input field', async ({ page }) => {
+  await page.goto('https://www.qa-practice.com/');
+  await expect(page.getByRole('link', { name: 'Text input' })).toBeVisible();
+  await page.getByRole('link', { name: 'Text input' }).click();
+  await expect(page.locator('label')).toContainText('Text string*');
+  await page.getByRole('textbox', { name: 'Text string*' }).fill('testtesttest123456789@)&');
+  await page.getByRole('textbox', { name: 'Text string*' }).press('Enter');
+  await expect(page.getByRole('strong')).toContainText('Enter a valid string consisting of letters, numbers, underscores or hyphens.');
+  await page.getByRole('textbox', { name: 'Text string*' }).fill('testtesttest');
+  await page.getByRole('textbox', { name: 'Text string*' }).press('Enter');
+  await expect(page.getByText('Your input was: testtesttest')).toBeVisible();
+  await expect(page.locator('#content')).toContainText('Email field');
+  await page.getByRole('link', { name: 'Email field' }).click();
+  await expect(page.locator('label')).toContainText('Email*');
+  await page.getByRole('textbox', { name: 'Email*' }).click();
+  await page.getByRole('textbox', { name: 'Email*' }).fill('mohamedtest123456');
+  await page.getByRole('textbox', { name: 'Email*' }).press('Enter');
+  await expect(page.getByRole('strong')).toContainText('Enter a valid email address.');
+  await page.getByRole('textbox', { name: 'Email*' }).click();
+  await page.getByRole('textbox', { name: 'Email*' }).fill('mohamedtest123456@yahoo.com');
+  await page.getByRole('textbox', { name: 'Email*' }).press('Enter');
+  await page.getByRole('link', { name: 'Password field' }).click();
+  await expect(page.locator('label')).toContainText('Password*');
+  await page.getByRole('textbox', { name: 'Password*' }).fill('123456789qa');
+  await page.getByRole('textbox', { name: 'Password*' }).press('Enter');
+  await expect(page.getByRole('strong')).toContainText('Low password complexity');
+  await page.getByRole('textbox', { name: 'Password*' }).fill('@Mtesting12345');
+  await page.getByRole('textbox', { name: 'Password*' }).press('Enter');
+});
